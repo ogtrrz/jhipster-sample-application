@@ -1,0 +1,56 @@
+
+
+
+entity Department {
+	departmentName String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String
+	lastName String
+	email String
+	phoneNumber String
+	hireDate Instant
+	salary Long
+	commissionPct Long
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+
+	/**
+	* A relationship
+	*/
+	Department to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee{department}
+}
+
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
